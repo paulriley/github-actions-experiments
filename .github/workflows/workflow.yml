@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Display payload
-      run: echo $GITHUB_EVENTPATH
+      run: echo $GITHUB_EVENT_PATH
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Run a multi-line script
