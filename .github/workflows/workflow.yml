@@ -9,6 +9,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    - name: Inspect on docker
+      run: docker container inspect $HOSTNAME
     - name: Display payload
       run: echo $GITHUB_EVENT_PATH
     - name: Run a one-line script
