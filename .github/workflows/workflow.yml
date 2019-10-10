@@ -15,6 +15,7 @@ jobs:
       run: echo $GITHUB_EVENT_PATH
     - name: Run a one-line script
       run: echo Hello, world!
+    - uses: ./.github/actions/show_payload
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,

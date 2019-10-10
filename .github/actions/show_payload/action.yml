@@ -1,0 +1,5 @@
+name: 'Show payload'
+description: 'Write the entire payload to the terminal'
+runs:
+  using: 'node12'
+  main: 'show-payload.js'
