@@ -11,11 +11,12 @@ jobs:
     - uses: actions/checkout@v1
     - name: Inspect on docker
       run: docker container inspect $HOSTNAME
-    - name: Display payload
-      run: echo $GITHUB_EVENT_PATH
+    - name: Display host name
+      run: ./.github/actions/show_hostname
     - name: Run a one-line script
       run: echo Hello, world!
-    - uses: ./.github/actions/show_payload
+    - name: Show payload
+      uses: ./.github/actions/show_payload
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,

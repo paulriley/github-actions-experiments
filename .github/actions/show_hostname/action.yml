@@ -1,0 +1,5 @@
+name: 'Show host name'
+description: 'Write the host name to the terminal'
+runs:
+  using: 'node12'
+  main: 'show-hostname.js'
