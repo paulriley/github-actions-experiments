@@ -11,7 +11,8 @@
 	
 	"runArgs": [
 		// Uncomment the next line to use Docker from inside the container. See https://aka.ms/vscode-remote/samples/docker-in-docker for details.
-		"-v", "/var/run/docker.sock:/var/run/docker.sock"
+		"-v", "/var/run/docker.sock:/var/run/docker.sock",
+		"-v", "${env:HOME}${env:USERPROFILE}/.ssh:/root/.ssh-localhost:ro"
 
 		// // You may want to add a non-root user to your Dockerfile. On Linux, this will prevent
 		// // new files getting created as root. See https://aka.ms/vscode-remote/containers/non-root-user
@@ -28,5 +29,7 @@
 		"mikestead.dotenv",
 		"ms-azuretools.vscode-docker",
 		"formulahendry.docker-explorer"
-	]
+	],
+
+	"postCreateCommand": "mkdir -p /root/.ssh && cp -r /root/.ssh-localhost/* /root/.ssh && chmod 700 /root/.ssh && chmod 600 /root/.ssh/*"
 }
