@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Inspect on docker
-      run: docker container inspect $HOSTNAME
+      run: docker container inspect `hostname`
     - name: Display host name
       uses: ./.github/actions/show_hostname
     - name: Run a one-line script
